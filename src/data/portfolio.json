@@ -1,0 +1,60 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Pixel Trail Development, LLC",
+      "description": "My business, Pixel Trail Development, LLC, is a software development company that specializes in creating custom software solutions from websites to video games.",
+      "tech": ["AI/ML", "Technical Writing", "Knowledge Sharing"],
+      "image": "https://via.placeholder.com/500x300",
+      "link": "https://www.pixeltrail.io"
+    },
+    {
+      "id": 2,
+      "title": "Space-Xplorer",
+      "description": "Space-Xplorer is an interactive web application that enables users to create personalized profiles, search specific locations, and receive detailed star charts, five-day weather forecasts, and information on visible celestial objects tailored to their area. The app also allows users to save and favorite their searches for easy access and future reference.",
+      "tech": ["React", "Node.js", "Express", "MongoDB", "Netlify", "SCSS"],
+      "image": "https://via.placeholder.com/500x300",
+      "link": "https://spacex-plorer.netlify.app/",
+      "github": {
+        "frontend": "https://github.com/KerbalRejects/SpaceXplorer-frontend",
+        "backend": "https://github.com/KerbalRejects/SpaceXplorer-Backend"
+      },
+      "team": ["Ethan Luxton, ", "Michael Gazaway, ", "Manuch Sadri, ", "and Christopher Lopez"]
+    },
+    {
+      "id": 3,
+      "title": "Tarkine",
+      "description": "Tarkine is a vanilla HTML, CSS and Javascript web-based game, featuring a story-driven puzzle adventure where players navigate to safety after a plane crash. Players must locate items, solve puzzles, and make crucial choices to escape the forest. This was my first project in a team setting during my coding bootcamp.",
+      "tech": ["HTML", "CSS", "Javascript"],
+      "image": "https://via.placeholder.com/500x300",
+      "link": "https://tarkine.github.io/Main/index.html",
+      "github": {
+        "frontend": "https://github.com/Tarkine/Main"
+
+      },
+      "team": ["Ethan Luxton, ", "Camilla Rees, ", "and Michael Gazaway"]
+    },
+    
+    {
+      "id": 4,
+      "title": "Custom Software Solutions",
+      "description": "Developed tailored web applications and software solutions for Washington State businesses.",
+      "tech": ["React", "Node.js", "MongoDB", "AWS"],
+      "image": "https://via.placeholder.com/500x300",
+      "link": "#"
+    }
+  ],
+  "skills": {
+    "languages": ["JavaScript", "Python", "HTML", "CSS", "SQL"],
+    "tools": [
+      "React.js", "Git", "GitHub", "VS Code", "Visual Studio", "Unity",
+      "WSL", "Linux Shell",
+      "Bootstrap", "Express.js", "Node.js", "MongoDB", "Auth0",
+      "PostgreSQL", "Socket.IO", "AWS", "NPM"
+    ],
+    "professional": [
+      "Salesforce", "Tamarac", "Wealthscape", "Schwab Advisor Center",
+      "Office 365 Suite","Adobe Suite", "Figma", "Prompt Engineering"
+    ]
+  }
+} 

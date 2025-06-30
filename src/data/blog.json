@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Managing Increased Uncertainty in the Middle East",
+      "excerpt": "An analysis of the recent events in the Middle East and their impact on the global economy; as well as how to navigate the current market environment during periods of increased uncertainty.",
+      "date": "Jun 24, 2025",
+      "readTime": "12 min read",
+      "category": "Market Commentary",
+      "link": "https://www.coldstream.com/insights/managing-increased-uncertainty-in-the-middle-east/"
+    },
+    {
+      "id": 1,
+      "title": "Bitcoin's Run-up: Opportunity or Risk? A Cybersecurity Perspective",
+      "excerpt": "An analysis of cryptocurrency risks from a cybersecurity perspective, exploring the recent Bitcoin hype and offering tips on protecting yourself from crypto-related scams.",
+      "date": "Nov 22, 2024",
+      "readTime": "8 min read",
+      "category": "Cybersecurity",
+      "link": "https://www.coldstream.com/insights/bitcoins-run-up-opportunity-or-risk-a-cybersecurity-perspective/"
+    },
+    {
+      "id": 2,
+      "title": "Understanding Wire Fraud and How to Prevent It",
+      "excerpt": "A comprehensive guide on wire fraud prevention, including real-world examples and practical steps to protect your financial transactions.",
+      "date": "Sep 30, 2024",
+      "readTime": "7 min read",
+      "category": "Cybersecurity",
+      "link": "https://www.coldstream.com/insights/understanding-wire-fraud-and-how-to-prevent-it/"
+    },
+    {
+      "id": 3,
+      "title": "Cybersecurity and You: Protecting Your Assets",
+      "excerpt": "Essential cybersecurity practices and strategies to safeguard your financial assets in an increasingly digital world.",
+      "date": "Aug 29, 2024",
+      "readTime": "5 min read",
+      "category": "Cybersecurity",
+      "link": "https://www.coldstream.com/insights/cybersecurity-and-you-protecting-your-assets/"
+    }
+  ]
+} 
