@@ -29,43 +29,77 @@ function Experience() {
     }
   };
 
+  // Common Glass Card Styles
+  const glassCardClass = "glass-card group p-6";
+
   return (
-    <div className="bg-gray-50 dark:bg-dark-bg text-gray-900 dark:text-dark-text transition-colors duration-200">
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-4xl font-bold mb-12 text-center">Professional Experience</h1>
+    <div className="w-full text-white/90">
+      <div className="max-w-5xl mx-auto px-4 py-12">
+        
+        {/* Section Header */}
+        <h1 className="text-4xl md:text-5xl font-extrabold mb-16 text-center tracking-tight">
+          Professional <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Experience</span>
+        </h1>
         
         {/* Work Experience Section with Timeline */}
-        <div className="relative mb-16">
-          {/* Main vertical line - now only covers the experience section */}
-          <div className="absolute left-12 top-0 h-[calc(100%-2rem)] w-0.5 bg-blue-400 dark:bg-blue-500"></div>
+        <div className="relative mb-24">
+          {/* Vertical Timeline Line with Gradient */}
+          <div className="absolute left-4 md:left-12 top-2 h-full w-0.5 bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-transparent"></div>
           
           {/* Experience items */}
           <div className="space-y-12">
             {experiences.map((experience, index) => (
-              <div key={experience.id} className="relative flex">
-                {/* Timeline icon */}
-                <div className="absolute left-12 -translate-x-1/2 w-12 h-12 rounded-full bg-blue-500 dark:bg-blue-400 border-4 border-white dark:border-dark-bg flex items-center justify-center z-10">
-                  <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    {getIconForRole(experience.role)}
-                  </svg>
+              <div key={experience.id} className="relative flex flex-col md:flex-row md:items-start">
+                
+                {/* Timeline Icon */}
+                <div className="absolute left-4 md:left-12 -translate-x-1/2 flex-shrink-0 mt-1">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-gradient-to-br from-gray-800 to-black border border-white/20 flex items-center justify-center shadow-[0_0_15px_rgba(120,119,198,0.3)] z-10">
+                    <svg className="h-5 w-5 md:h-6 md:w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      {getIconForRole(experience.role)}
+                    </svg>
+                  </div>
                 </div>
                 
-                {/* Content card */}
-                <div className="ml-24 bg-white dark:bg-[#1a1f2e] rounded-lg p-6 shadow-lg transition-colors duration-200 flex-grow">
-                  <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{experience.role}</h3>
-                    <p className="text-gray-600 dark:text-gray-300">{experience.company} - {experience.location}</p>
-                    <p className="text-gray-500 dark:text-gray-400">{experience.duration}</p>
+                {/* Content Card */}
+                <div className={`ml-12 md:ml-24 flex-grow ${glassCardClass}`}>
+                  {/* Role & Company Header */}
+                  <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2">
+                    <div>
+                      <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-blue-300 transition-colors">
+                        {experience.role}
+                      </h3>
+                      {experience.role2 && (
+                        <h4 className="text-md font-semibold text-white tracking-tight">
+                          {experience.role2}
+                        </h4>
+                      )}
+                      {experience.role3 && (
+                        <h5 className="text-sm font-semibold text-white/90 tracking-tight">
+                          {experience.role3}
+                        </h5>
+                      )}
+                      <p className="text-white/80 font-medium">{experience.company} • {experience.location}</p>
+                    </div>
+                    <div className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-white/80 whitespace-nowrap w-fit">
+                      {experience.duration}
+                    </div>
                   </div>
-                  <ul className="space-y-2 text-gray-700 dark:text-gray-300 list-disc ml-4">
-                    {experience.description.map((item, index) => (
-                      <li key={index}>{item}</li>
+
+                  {/* Description List */}
+                  <ul className="space-y-3 text-white/85 leading-relaxed list-none mb-6">
+                    {experience.description.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3">
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-white/60 flex-shrink-0"></span>
+                        <span className="text-sm md:text-base">{item}</span>
+                      </li>
                     ))}
                   </ul>
+
+                  {/* Technologies Pills */}
                   {experience.technologies && (
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {experience.technologies.map((tech, index) => (
-                        <span key={index} className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded-full text-sm">
+                    <div className="flex flex-wrap gap-2 pt-4 border-t border-white/5">
+                      {experience.technologies.map((tech, idx) => (
+                        <span key={idx} className="px-3 py-1 rounded-md text-xs font-medium bg-white/5 border border-white/10 text-white/90 hover:bg-white/10 transition-all hover:border-white/30 cursor-default">
                           {tech}
                         </span>
                       ))}
@@ -77,28 +111,39 @@ function Experience() {
           </div>
         </div>
 
-        {/* Education Section - No Timeline */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Education</h2>
+        {/* Education Section */}
+        <div className="mt-24">
+          <h2 className="text-3xl font-bold mb-10 text-center tracking-tight">
+            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Education</span>
+          </h2>
           <div className="space-y-6">
             {education.map((edu) => (
-              <div key={edu.id} className="bg-white dark:bg-[#1a1f2e] rounded-lg p-6 shadow-lg transition-colors duration-200">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{edu.degree}</h3>
-                <p className="text-gray-600 dark:text-gray-300">{edu.school} - {edu.location}</p>
-                <p className="text-gray-500 dark:text-gray-400">{edu.year}</p>
+              <div key={edu.id} className={`${glassCardClass} flex flex-col md:flex-row md:justify-between md:items-center gap-4`}>
+                <div>
+                  <h3 className="text-xl font-semibold text-white">{edu.degree}</h3>
+                  <p className="text-white/80 mt-1">{edu.school} • {edu.location}</p>
+                </div>
+                <div className="text-white/70 font-medium text-sm bg-black/20 px-4 py-2 rounded-full border border-white/10">
+                  {edu.year}
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Certifications Section - No Timeline */}
-        <div className="mt-16">
-          <h2 className="text-3xl font-bold mb-8 text-center">Certifications & Achievements</h2>
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {/* Certifications Section */}
+        <div className="mt-24 mb-12">
+          <h2 className="text-3xl font-bold mb-10 text-center tracking-tight">
+            Certifications & <span className="text-purple-400">Achievements</span>
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {certifications.map((cert) => (
-              <div key={cert.id} className="bg-white dark:bg-[#1a1f2e] rounded-lg p-6 shadow-lg transition-colors duration-200">
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{cert.title}</h3>
-                <p className="text-gray-500 dark:text-gray-400 mt-1">{cert.date}</p>
+              <div key={cert.id} className={`${glassCardClass} flex flex-col justify-between min-h-[140px]`}>
+                <h3 className="text-lg font-semibold text-white leading-snug">{cert.title}</h3>
+                <div className="mt-4 flex items-center gap-2 text-sm text-white/70">
+                  <div className="w-2 h-2 rounded-full bg-white/60"></div>
+                  {cert.date}
+                </div>
               </div>
             ))}
           </div>
@@ -108,4 +153,4 @@ function Experience() {
   )
 }
 
-export default Experience 
+export default Experience

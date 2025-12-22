@@ -37,13 +37,22 @@
       "link": "https://www.coldstream.com/insights/cybersecurity-and-you-protecting-your-assets/"
     },
     {
-      "id": 3,
+      "id": 4,
       "title": "Caring for Our Community: The Erik Hansen Scout Park Project",
       "excerpt": "Volunteer efforts to restore the Erik Hansen Scout Park in Kenai, Alaska. Comprised of many volunteers, from the local community, scout troop, and Coldstream employees.",
       "date": "Jul 18, 2025",
       "readTime": "7 min read",
       "tags": ["Volunteer", "Community"],
       "link": "https://www.coldstream.com/insights/caring-for-our-community-the-erik-hansen-scout-park-project/"
+    },
+    {
+      "id": 5,
+      "title": "Getting Your Digital Health in Order for the New Year",
+      "excerpt": "The New Year is a typical time to review your budget, savings, and investment plans. It is just as important to review the digital side of your life.",
+      "date": "Dec 22, 2025",
+      "readTime": "10 min read",
+      "tags": ["Cybersecurity", "Finance"],
+      "link": "https://www.coldstream.com/insights/getting-your-digital-health-in-order-for-the-new-year/"
     }
   ]
 } 

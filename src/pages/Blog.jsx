@@ -3,6 +3,7 @@ import blogData from '../data/blog.json'
 
 function Blog() {
   const { posts } = blogData;
+  const glassCardClass = "glass-card group p-6";
 
   // Collect all unique tags
   const allTags = useMemo(() => {
@@ -32,19 +33,17 @@ function Blog() {
   }, [posts, selectedTag, dateSort]);
 
   return (
-    <div className="bg-gray-50 dark:bg-dark-bg text-gray-900 dark:text-dark-text min-h-screen py-12 px-4 transition-colors duration-200">
+    <div className="w-full text-white/90 py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4 text-center">Published Articles</h1>
-        <p className="text-gray-600 dark:text-dark-text-secondary text-center mb-8">
-          Professional articles either authored or co-authored by me.
-        </p>
+        <h1 className="text-4xl font-extrabold mb-4 text-center text-gradient">Published <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Articles</span></h1>
+        <p className="text-white/70 text-center mb-8">Professional articles either authored or co‑authored by me.</p>
 
         {/* Filters */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
+        <div className="glass-card p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
           {/* Tag Filter */}
-          <div className="flex flex-wrap gap-2 justify-center md:justify-start">
+            <div className="flex flex-wrap gap-2 justify-center md:justify-start">
             <button
-              className={`px-3 py-1 rounded-full border transition-colors duration-150 text-sm font-medium ${selectedTag === 'All' ? 'bg-primary text-white border-primary' : 'bg-primary-light/10 dark:bg-primary/10 text-primary dark:text-primary-light border-primary'}`}
+              className={`px-3 py-1 rounded-full border transition-colors duration-150 text-sm font-medium ${selectedTag === 'All' ? 'bg-primary text-black border-primary' : 'bg-primary/5 text-primary border-primary/30'}`}
               onClick={() => setSelectedTag('All')}
             >
               All
@@ -52,7 +51,7 @@ function Blog() {
             {allTags.map(tag => (
               <button
                 key={tag}
-                className={`px-3 py-1 rounded-full border transition-colors duration-150 text-sm font-medium ${selectedTag === tag ? 'bg-primary text-white border-primary' : 'bg-primary-light/10 dark:bg-primary/10 text-primary dark:text-primary-light border-primary'}`}
+                className={`px-3 py-1 rounded-full border transition-colors duration-150 text-sm font-medium ${selectedTag === tag ? 'bg-primary text-black border-primary' : 'bg-primary/5 text-primary border-primary/30'}`}
                 onClick={() => setSelectedTag(tag)}
               >
                 {tag.charAt(0).toUpperCase() + tag.slice(1)}
@@ -61,12 +60,12 @@ function Blog() {
           </div>
           {/* Date Sort */}
           <div className="flex items-center gap-2 justify-center md:justify-end">
-            <label htmlFor="dateSort" className="text-sm text-gray-600 dark:text-dark-text-secondary">Sort by date:</label>
+            <label htmlFor="dateSort" className="text-sm text-dark-text-secondary">Sort by date:</label>
             <select
               id="dateSort"
               value={dateSort}
               onChange={e => setDateSort(e.target.value)}
-              className="rounded border border-gray-300 dark:border-gray-700 px-2 py-1 text-sm bg-white dark:bg-dark-card text-gray-700 dark:text-dark-text-secondary focus:outline-none focus:ring-2 focus:ring-primary"
+              className="rounded border border-primary/30 px-2 py-1 text-sm bg-dark-card text-dark-text-secondary focus:outline-none focus:ring-2 focus:ring-primary"
             >
               <option value="newest">Newest first</option>
               <option value="oldest">Oldest first</option>
@@ -76,33 +75,33 @@ function Blog() {
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
           {filteredPosts.length === 0 ? (
-            <div className="col-span-full text-center text-gray-500 dark:text-dark-text-secondary py-12">
+            <div className="col-span-full text-center text-white/70 py-12">
               No articles found for this filter.
             </div>
           ) : (
             filteredPosts.map((post) => (
-              <div key={post.id + post.title} className="bg-white dark:bg-dark-card rounded-lg overflow-hidden shadow-lg transition-colors duration-200 flex flex-col">
-                <div className="p-6 flex flex-col flex-grow">
+              <article key={post.id + post.title} className={`${glassCardClass} flex flex-col`}>
+                <div className="flex flex-col flex-grow">
                   <div className="mb-3 flex flex-wrap gap-2 items-center">
                     {post.tags && post.tags.map(tag => (
-                      <span key={tag} className="px-3 py-1 rounded-full border border-primary bg-primary-light/10 dark:bg-primary/10 text-primary dark:text-primary-light text-xs font-medium">
+                      <span key={tag} className="px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-medium">
                         {tag.charAt(0).toUpperCase() + tag.slice(1)}
                       </span>
                     ))}
                   </div>
-                  <h2 className="text-xl font-semibold mb-3 flex-shrink-0">{post.title}</h2>
-                  <p className="text-gray-600 dark:text-dark-text-secondary mb-4 flex-grow">
+                  <h2 className="text-xl font-semibold mb-3 flex-shrink-0 text-white">{post.title}</h2>
+                  <p className="text-white/75 mb-4 flex-grow">
                     {post.excerpt}
                   </p>
-                  <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                    <span className="text-gray-500 dark:text-dark-text-secondary text-sm">
+                  <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-700">
+                    <span className="text-white/70 text-sm">
                       {post.date} · {post.readTime}
                     </span>
                     <a 
                       href={post.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary transition-colors duration-200 flex items-center"
+                      className="text-primary hover:text-primary-600 transition-colors duration-200 flex items-center"
                     >
                       Read article
                       <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -111,7 +110,7 @@ function Blog() {
                     </a>
                   </div>
                 </div>
-              </div>
+              </article>
             ))
           )}
         </div>

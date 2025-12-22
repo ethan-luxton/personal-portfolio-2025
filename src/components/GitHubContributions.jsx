@@ -51,7 +51,7 @@ const GitHubContributions = () => {
   if (loading) {
     return (
       <div className="flex justify-center items-center h-48">
-        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+        <div className="animate-spin rounded-full h-10 w-10 border-[3px] border-primary/30 border-t-primary"></div>
       </div>
     );
   }
@@ -60,7 +60,7 @@ const GitHubContributions = () => {
     return (
       <div className="mt-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Open Source Contributions</h2>
-        <div className="text-center text-red-600 dark:text-red-400">
+        <div className="text-center text-red-400">
           {error}
         </div>
       </div>
@@ -71,7 +71,7 @@ const GitHubContributions = () => {
     return (
       <div className="mt-16">
         <h2 className="text-3xl font-bold mb-8 text-center">Open Source Contributions</h2>
-        <div className="text-center text-gray-600 dark:text-gray-400">
+        <div className="text-center text-gray-400">
           No public contributions found. Check back later!
         </div>
       </div>
@@ -80,18 +80,18 @@ const GitHubContributions = () => {
 
   return (
     <div className="mt-16">
-      <h2 className="text-3xl font-bold mb-8 text-center">Recent Open Source Contributions</h2>
+      <h2 className="text-3xl font-bold mb-8 text-center text-gradient">Recent Open Source Contributions</h2>
       
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {pullRequests.map((pr) => (
-          <div key={pr.id} className="bg-white dark:bg-dark-card rounded-lg p-6 shadow-lg transition-colors duration-200">
+          <article key={pr.id} className="glass-card group p-6">
             <div className="flex items-start justify-between mb-3">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+              <h3 className="text-xl font-semibold text-white">
                 <a 
                   href={pr.html_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-primary dark:hover:text-primary-light"
+                  className="hover:text-primary"
                 >
                   {pr.repository_name}
                 </a>
@@ -99,35 +99,36 @@ const GitHubContributions = () => {
               <div className="flex items-center">
                 <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
                   pr.state === 'open' 
-                    ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400'
-                    : 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-400'
+                    ? 'bg-green-500/10 text-green-600 border border-green-500/30'
+                    : 'bg-purple-500/10 text-purple-600 border border-purple-500/30'
                 }`}>
                   {pr.state === 'open' ? 'Open' : 'Merged'}
                 </span>
               </div>
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-gray-300 mb-4">
               #{pr.number} - {pr.title}
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               {pr.labels.map((label) => (
                 <span 
                   key={label.id}
-                  className="px-3 py-1 bg-primary-light/10 dark:bg-primary/10 text-primary dark:text-primary-light rounded-full text-sm"
+                  className="px-3 py-1 rounded-full text-sm border"
                   style={{
-                    backgroundColor: `#${label.color}20`,
-                    color: `#${label.color}`
+                    backgroundColor: `#${label.color}1a`,
+                    color: `#${label.color}`,
+                    borderColor: `#${label.color}4d`
                   }}
                 >
                   {label.name}
                 </span>
               ))}
             </div>
-            <div className="flex items-center space-x-4 text-sm text-gray-500 dark:text-gray-400">
+            <div className="flex items-center space-x-4 text-sm text-gray-400">
               <span>Created: {new Date(pr.created_at).toLocaleDateString()}</span>
               
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </div>

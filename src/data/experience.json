@@ -3,16 +3,19 @@
     {
       "id": 1,
       "role": "Wealth Management Associate",
+      "role2": "Senior Client Service Associate",
+      "role3": "Client Service Associate",
       "company": "Coldstream Wealth Management",
       "location": "Bellevue, WA",
-      "duration": "Feb. 2025 - Present",
+      "duration": "Jun. 2022 - Present",
       "description": [
-        "Authored and published articles on Market Commentary, Cybersecurity, Wire Fraud and Cryptocurrency for client education and marketing purposes",
-        "Created and distributed internal team newsletters focused on AI and Large Language Models (LLMs) to enhance team knowledge and capabilities",
-        "Processed and executed transactional requests exceeding $10,000,000+",
-        "Conducted thorough portfolio analysis and proposed strategic trades for optimal portfolio rebalancing and performance",
-        "Implemented derivatives-based hedging strategies resulting in over $100,000 in gains during a period of heightened market volatility",
-        "Served as a senior associate with team reports, provided team member annual reviews and assisted in interviewing new team members"
+        "Wrote articles on Cybersecurity, Wire Fraud, Market Commentary and Cryptocurrency published by Coldstream for prospective and current clients.",
+        "Automated and edited monthly AI/LLM Internal Newsletters for my team, saving hours of time by utilizing workflow automation to research and summarize AI news.",
+        "Built email templates for meeting preparation, meeting notes and other common tasks to reduce time spent on repetitive inputs.",
+        "Responded and processed transactional requests of up to $10,000,000+ at a client's request.",
+        "Developed new internal team Sharepoint sites on licensing and designation training and AI prompt engineering to improve client service efficiency.",
+        "Implemented a derivatives-based hedging strategy for a client that led to $87,000 in net profit, cutting losses during a period of heightened market volatility in 2025.",
+        "Served as a senior associate with team reports, provided team member annual reviews and assisted in interviewing new team members."
       ],
       "technologies": ["Salesforce", "Tamarac", "Wealthscape", "Schwab Advisor Center"]
     },
@@ -21,7 +24,7 @@
       "role": "Business Owner",
       "company": "Pixel Trail Development, LLC",
       "location": "Remote",
-      "duration": "Jun. 2024 - Present",
+      "duration": "Jun. 2024 - Dec. 2025",
       "description": [
         "Developed and delivered custom software solutions and modern web applications for Washington State businesses",
         "Specialized in full-stack JavaScript development using React, Node.js, and cloud infrastructure"
