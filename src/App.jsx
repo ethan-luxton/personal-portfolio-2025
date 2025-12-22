@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 
-import DarkVeil from './components/DarkVeil'
+
 
 // Page Components
 import Home from './pages/Home'
@@ -19,25 +19,7 @@ function AppShell() {
 
   return (
     <div className="min-h-screen flex flex-col bg-dark-bg text-dark-text transition-colors duration-200">
-      {showDarkVeil && (
-        <div className="pointer-events-none fixed inset-0 -z-20 opacity-80" aria-hidden>
-          <DarkVeil
-            hueShift={240}
-            noiseIntensity={0.03}
-            warpAmount={0.2}
-            scanlineIntensity={0.04}
-            scanlineFrequency={2.0}
-            speed={0.25}
-          />
-        </div>
-      )}
-      {!showDarkVeil && (
-        <div className="pointer-events-none fixed inset-0 -z-10 opacity-40" aria-hidden>
-          <div className="absolute inset-0 bg-grid-pattern [background-size:20px_20px]"></div>
-          <div className="absolute top-[-20%] left-[-10%] h-[60vh] w-[60vw] rounded-full blur-3xl bg-slate-300/10"></div>
-          <div className="absolute bottom-[-20%] right-[-10%] h-[60vh] w-[60vw] rounded-full blur-3xl bg-zinc-300/10"></div>
-        </div>
-      )}
+      
         <nav className="sticky top-0 z-20 glass backdrop-saturate-150">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16">
