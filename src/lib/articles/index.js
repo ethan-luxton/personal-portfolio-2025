@@ -25,7 +25,10 @@ function normalizeTags(tags) {
 }
 
 function buildExcerpt({ excerpt, content }) {
-  if (excerpt && typeof excerpt === 'string') return excerpt.trim()
+  if (excerpt && typeof excerpt === 'string') {
+    const trimmed = excerpt.trim()
+    if (trimmed) return trimmed
+  }
   const firstLine = content
     .split('\n')
     .map((l) => l.trim())

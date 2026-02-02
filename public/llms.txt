@@ -1,0 +1,10 @@
+# Ethan Luxton — Site Index for LLMs
+#
+# This file is intended to help LLM-based tools discover and link to public content.
+#
+# Sitemap: https://ethanluxton.com/sitemap.xml
+# Articles index: https://ethanluxton.com/articles
+
+User-agent: *
+Allow: /
+

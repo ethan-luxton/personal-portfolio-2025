@@ -7,11 +7,13 @@
     "dev": "vite",
     "prebuild": "node scripts/check-articles.mjs && node scripts/generate-sitemap.mjs",
     "build": "vite build",
+    "postbuild": "node scripts/prerender-routes.mjs",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "new:article": "node scripts/new-article.mjs",
     "check:articles": "node scripts/check-articles.mjs",
-    "generate:sitemap": "node scripts/generate-sitemap.mjs"
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
+    "prerender:routes": "node scripts/prerender-routes.mjs"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",

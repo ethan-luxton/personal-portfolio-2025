@@ -35,7 +35,7 @@ function Article() {
   const published = formatDateLong(article.date)
   const updated = article.updated ? formatDateLong(article.updated) : null
 
-  const ogImage = absoluteUrl(article.coverImage)
+  const ogImage = absoluteUrl(article.coverImage) || 'https://ethanluxton.com/images/articles/placeholder.svg'
   const browserTimeZone =
   (typeof Intl !== "undefined" &&
       Intl.DateTimeFormat &&
@@ -99,9 +99,9 @@ function Article() {
         <meta property="og:title" content={article.title} />
         <meta property="og:description" content={article.excerpt} />
         <meta property="og:url" content={article.canonicalUrl} />
-        {ogImage ? <meta property="og:image" content={ogImage} /> : null}
+        <meta property="og:image" content={ogImage} />
 
-        <meta name="twitter:card" content={ogImage ? 'summary_large_image' : 'summary'} />
+        <meta name="twitter:card" content="summary_large_image" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
@@ -194,4 +194,3 @@ function Article() {
 }
 
 export default Article
-

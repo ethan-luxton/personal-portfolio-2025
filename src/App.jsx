@@ -8,7 +8,6 @@ import { MenuIcon, XIcon } from '@heroicons/react/outline'
 // Page Components
 import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
-import Experience from './pages/Experience'
 import Blog from './pages/Blog'
 import Article from './pages/Article'
 
@@ -16,7 +15,7 @@ function AppShell() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
   const showDarkVeil =
-    location.pathname === '/portfolio' || location.pathname === '/experience' || location.pathname.startsWith('/articles')
+    location.pathname === '/portfolio' || location.pathname.startsWith('/articles')
 
   return (
     <div className="min-h-screen flex flex-col bg-dark-bg text-dark-text transition-colors duration-200">
@@ -39,9 +38,6 @@ function AppShell() {
                   </Link>
                   <Link to="/portfolio" className="text-dark-text hover:text-white px-3 py-2 rounded-md transition-colors duration-200">
                     Portfolio
-                  </Link>
-                  <Link to="/experience" className="text-dark-text hover:text-white px-3 py-2 rounded-md transition-colors duration-200">
-                    Experience
                   </Link>
                   <Link to="/articles" className="text-dark-text hover:text-white px-3 py-2 rounded-md transition-colors duration-200">
                     Articles
@@ -84,9 +80,6 @@ function AppShell() {
                 <Link to="/portfolio" className="block px-3 py-2 rounded-md text-dark-text hover:text-white hover:bg-dark-card transition-colors duration-200">
                   Portfolio
                 </Link>
-                <Link to="/experience" className="block px-3 py-2 rounded-md text-dark-text hover:text-white hover:bg-dark-card transition-colors duration-200">
-                  Experience
-                </Link>
                 <Link to="/articles" className="block px-3 py-2 rounded-md text-dark-text hover:text-white hover:bg-dark-card transition-colors duration-200">
                   Articles
                 </Link>
@@ -100,7 +93,6 @@ function AppShell() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/experience" element={<Experience />} />
             <Route path="/articles" element={<Blog />} />
             <Route path="/articles/:slug" element={<Article />} />
             <Route

@@ -60,8 +60,8 @@ function Home() {
                 </span>
               </Link>
 
-              <Link to="/experience" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-gray-200 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm hover:scale-105">
-                My Experience
+              <Link to="/articles" className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-gray-200 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-300 backdrop-blur-sm hover:scale-105">
+                Read Articles
               </Link>
             </div>
           </div>

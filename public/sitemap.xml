@@ -11,13 +11,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ethanluxton.com/experience</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://ethanluxton.com/articles</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://ethanluxton.com/articles/building-trust-in-agentic-ai-autonomy-without-chaos</loc>
+    <lastmod>2026-02-03T00:00:00.000Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>
