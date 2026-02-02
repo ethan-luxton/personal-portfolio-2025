@@ -36,7 +36,7 @@ function Portfolio() {
                   )}
                   {project.github?.frontend && (
                     <a href={project.github.frontend} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                      Frontend →
+                      {project.github?.backend ? 'Frontend →' : 'GitHub →'}
                     </a>
                   )}
                   {project.github?.backend && (

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Placeholder image">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb" stop-opacity="0.25" />
+      <stop offset="1" stop-color="#a855f7" stop-opacity="0.25" />
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#0f1115" />
+  <rect x="80" y="80" width="1440" height="740" rx="32" fill="url(#g)" stroke="#ffffff" stroke-opacity="0.12" />
+  <g fill="#ffffff" fill-opacity="0.85" font-family="Inter, ui-sans-serif, system-ui" text-anchor="middle">
+    <text x="800" y="440" font-size="56" font-weight="700">Article Cover</text>
+    <text x="800" y="510" font-size="26" font-weight="400" fill-opacity="0.65">Replace with your own image in public/</text>
+  </g>
+</svg>

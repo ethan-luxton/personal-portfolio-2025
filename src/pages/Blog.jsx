@@ -1,9 +1,15 @@
 import React, { useState, useMemo } from 'react'
+import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import blogData from '../data/blog.json'
+import { formatDateLong } from '../lib/articles/core'
+import { getAllOnSiteArticles } from '../lib/articles'
 
 function Blog() {
   const { posts } = blogData;
   const glassCardClass = "glass-card group p-6";
+
+  const onSiteArticles = useMemo(() => getAllOnSiteArticles(), []);
 
   // Collect all unique tags
   const allTags = useMemo(() => {
@@ -34,10 +40,76 @@ function Blog() {
 
   return (
     <div className="w-full text-white/90 py-12 px-4">
+      <Helmet>
+        <title>Articles · Ethan Luxton</title>
+        <meta
+          name="description"
+          content="Professional articles authored or co-authored by Ethan Luxton, plus on-site posts published on ethanluxton.com."
+        />
+        <link rel="canonical" href="https://ethanluxton.com/articles" />
+        <meta property="og:title" content="Articles · Ethan Luxton" />
+        <meta
+          property="og:description"
+          content="Professional articles authored or co-authored by Ethan Luxton, plus on-site posts published on ethanluxton.com."
+        />
+        <meta property="og:url" content="https://ethanluxton.com/articles" />
+      </Helmet>
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl font-extrabold mb-4 text-center text-gradient">Published <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Articles</span></h1>
         <p className="text-white/70 text-center mb-8">Professional articles either authored or co‑authored by me.</p>
 
+        {/* On-site articles (internal) */}
+        <section className="mb-12">
+          <div className="flex items-end justify-between gap-4 mb-5">
+            <div>
+              <h2 className="text-2xl font-bold text-white">On-site articles</h2>
+            </div>
+          </div>
+
+          {onSiteArticles.length === 0 ? (
+            <div className="glass-card p-6 text-white/70">
+              No on-site articles yet.
+            </div>
+          ) : (
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+              {onSiteArticles.map((post) => (
+                <article key={post.slug} className={`${glassCardClass} flex flex-col`}>
+                  <div className="flex flex-col flex-grow">
+                    <div className="mb-3 flex flex-wrap gap-2 items-center">
+                      {post.tags?.map(tag => (
+                        <span key={tag} className="px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-medium">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h3 className="text-xl font-semibold mb-3 flex-shrink-0 text-white">
+                      <Link to={`/articles/${post.slug}`} className="hover:text-primary transition-colors">
+                        {post.title}
+                      </Link>
+                    </h3>
+                    <p className="text-white/75 mb-4 flex-grow">{post.excerpt}</p>
+                    <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-700">
+                      <span className="text-white/70 text-sm">
+                        {formatDateLong(post.date)} · {post.readingTimeText}
+                      </span>
+                      <Link
+                        to={`/articles/${post.slug}`}
+                        className="text-primary hover:text-primary-600 transition-colors duration-200 flex items-center"
+                      >
+                        Read
+                        <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </Link>
+                    </div>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </section>
+
+        {/* External links (existing) */}
         {/* Filters */}
         <div className="glass-card p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-10">
           {/* Tag Filter */}

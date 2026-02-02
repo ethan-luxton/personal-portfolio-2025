@@ -1,13 +1,77 @@
-# React + Vite
+# personal-portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ethan Luxton’s personal portfolio site, built with React + Vite + React Router + Tailwind.
 
-Currently, two official plugins are available:
+## Dev
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `yarn dev`
+- `yarn lint`
+- `yarn build`
+- `yarn preview`
 
-## Expanding the ESLint configuration
+## On-site articles
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# personal-portfolio-2025
+On-site articles are authored as Markdown files in `content/articles/` and are published at:
+
+- Index: `/articles` (shows on-site articles + existing external links)
+- Article page: `/articles/:slug`
+
+### Create a new article stub
+
+```bash
+npm run new:article -- --title "My New Post"
+```
+
+This creates a draft file in `content/articles/` with frontmatter. Set `draft: false` to publish.
+
+### Frontmatter fields
+
+Each article supports frontmatter like:
+
+```yaml
+---
+title: "..."
+slug: "..."            # optional (defaults from filename)
+date: "YYYY-MM-DD"
+updated: "YYYY-MM-DD"  # optional
+excerpt: "..."
+tags: ["...", "..."]   # optional
+draft: false           # drafts excluded from production builds
+coverImage: "/images/..." # optional
+canonical: "https://..."  # optional
+allowHtml: false          # optional (when true, HTML is sanitized)
+---
+```
+
+### Markdown features
+
+- GitHub-flavored markdown (tables, strikethrough, etc.)
+- Autolinked headings and optional table of contents
+- Syntax highlighted code blocks
+- Simple callouts:
+
+```md
+> [!NOTE]
+> A helpful note.
+
+> [!WARNING]
+> A warning.
+```
+
+### Images
+
+Put images under `public/` (example: `public/images/articles/`) and reference them with absolute paths:
+
+```md
+![Alt text](/images/articles/my-image.png)
+```
+
+### Raw HTML (sanitized)
+
+Raw HTML in Markdown is disabled by default. If you set `allowHtml: true`, HTML blocks are sanitized to a safe subset to avoid XSS (scripts/iframes/inline event handlers are not allowed).
+
+### Validation and sitemap
+
+- `yarn check:articles` validates frontmatter (dates, duplicate slugs, etc.)
+- `yarn generate:sitemap` writes `public/sitemap.xml`
+- `yarn build` runs both via `prebuild`

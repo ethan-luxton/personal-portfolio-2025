@@ -48,7 +48,7 @@ function Experience() {
           
           {/* Experience items */}
           <div className="space-y-12">
-            {experiences.map((experience, index) => (
+            {experiences.map((experience) => (
               <div key={experience.id} className="relative flex flex-col md:flex-row md:items-start">
                 
                 {/* Timeline Icon */}

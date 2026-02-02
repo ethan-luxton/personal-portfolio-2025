@@ -1,12 +1,15 @@
 {
   "projects": [
     {
-      "id": 1,
-      "title": "Pixel Trail Development, LLC",
-      "description": "My business, Pixel Trail Development, LLC, is a software development company that specializes in creating custom software solutions from websites to video games.",
-      "tech": ["AI/ML", "Technical Writing", "Knowledge Sharing"],
+      "id": 5,
+      "title": "Sparrow",
+      "description": "Sparrow is a local, tool-enabled Telegram assistant designed for autonomous operation with basic protections for data security. It runs entirely on your machine, operates inside a scoped workspace, and can manage files, Git workflows, and external tools while enforcing tiered approvals for higher-risk actions.",
+      "tech": ["Open Source", "JavaScript, Typescript"],
       "image": "https://via.placeholder.com/500x300",
-      "link": "https://www.pixeltrail.io"
+      "github": {
+        "frontend": "https://github.com/ethan-luxton/Sparrow"
+      },
+      "team": ["Ethan Luxton"]
     },
     {
       "id": 2,
@@ -33,15 +36,6 @@
 
       },
       "team": ["Ethan Luxton, ", "Camilla Rees, ", "and Michael Gazaway"]
-    },
-    
-    {
-      "id": 4,
-      "title": "Custom Software Solutions",
-      "description": "Developed tailored web applications and software solutions for Washington State businesses.",
-      "tech": ["React", "Node.js", "MongoDB", "AWS"],
-      "image": "https://via.placeholder.com/500x300",
-      "link": "#"
     }
   ],
   "skills": {

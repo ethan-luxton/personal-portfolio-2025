@@ -10,12 +10,13 @@ import Home from './pages/Home'
 import Portfolio from './pages/Portfolio'
 import Experience from './pages/Experience'
 import Blog from './pages/Blog'
+import Article from './pages/Article'
 
 function AppShell() {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
   const showDarkVeil =
-    location.pathname === '/portfolio' || location.pathname === '/experience' || location.pathname === '/articles'
+    location.pathname === '/portfolio' || location.pathname === '/experience' || location.pathname.startsWith('/articles')
 
   return (
     <div className="min-h-screen flex flex-col bg-dark-bg text-dark-text transition-colors duration-200">
@@ -101,6 +102,7 @@ function AppShell() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/articles" element={<Blog />} />
+            <Route path="/articles/:slug" element={<Article />} />
             <Route
               path="*"
               element={
