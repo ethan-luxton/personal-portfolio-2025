@@ -51,7 +51,10 @@ function extractToc(markdown) {
 }
 
 function buildSanitizeSchema() {
-  const schema = structuredClone(defaultSchema)
+  const schema =
+    typeof globalThis.structuredClone === 'function'
+      ? globalThis.structuredClone(defaultSchema)
+      : JSON.parse(JSON.stringify(defaultSchema))
 
   schema.attributes = schema.attributes || {}
 
