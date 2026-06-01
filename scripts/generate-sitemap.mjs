@@ -57,6 +57,7 @@ async function readOnSiteArticles() {
 async function main() {
   const staticRoutes = [
     { path: '/', changefreq: 'monthly', priority: '1.0' },
+    { path: '/about', changefreq: 'monthly', priority: '0.8' },
     { path: '/portfolio', changefreq: 'monthly', priority: '0.8' },
     { path: '/articles', changefreq: 'weekly', priority: '0.9' },
   ]
