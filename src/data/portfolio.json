@@ -1,20 +1,44 @@
 {
   "projects": [
     {
-      "id": 5,
-      "title": "Sparrow",
-      "description": "Sparrow is a local, tool-enabled Telegram assistant designed for autonomous operation with basic protections for data security. It runs entirely on your machine, operates inside a scoped workspace, and can manage files, Git workflows, and external tools while enforcing tiered approvals for higher-risk actions.",
-      "tech": ["Open Source", "JavaScript, Typescript"],
+      "id": 1,
+      "title": "PixelTrail AI",
+      "description": "An open-source, tool-enabled AI assistant project focused on responsible autonomy: scoped permissions, observable actions, local workflows, and practical automation patterns for real systems.",
+      "tech": ["Agentic AI", "TypeScript", "Automation", "Open Source", "Security Controls"],
       "image": "https://via.placeholder.com/500x300",
       "github": {
-        "frontend": "https://github.com/ethan-luxton/Sparrow"
+        "frontend": "https://github.com/ethan-luxton/PixelTrail-AI"
       },
       "team": ["Ethan Luxton"]
     },
     {
       "id": 2,
+      "title": "Personal Portfolio",
+      "description": "A React and Vite personal site that unifies professional writing, projects, GitHub activity, and a finance-plus-technology brand narrative under ethanluxton.com.",
+      "tech": ["React", "Vite", "Tailwind CSS", "SEO", "Content Systems"],
+      "image": "https://via.placeholder.com/500x300",
+      "link": "https://ethanluxton.com/",
+      "github": {
+        "frontend": "https://github.com/ethan-luxton/personal-portfolio-2025"
+      },
+      "team": ["Ethan Luxton"]
+    },
+    {
+      "id": 3,
+      "title": "Wedding Photo Platform",
+      "description": "A personal full-stack photo-sharing project for collecting and organizing guest-uploaded wedding photos, with separate frontend and backend repositories.",
+      "tech": ["JavaScript", "Frontend", "Backend", "Event Tools", "Personal Systems"],
+      "image": "https://via.placeholder.com/500x300",
+      "github": {
+        "frontend": "https://github.com/ethan-luxton/wedding-photo-frontend",
+        "backend": "https://github.com/ethan-luxton/wedding-photo-backend"
+      },
+      "team": ["Ethan Luxton"]
+    },
+    {
+      "id": 4,
       "title": "Space-Xplorer",
-      "description": "Space-Xplorer is an interactive web application that enables users to create personalized profiles, search specific locations, and receive detailed star charts, five-day weather forecasts, and information on visible celestial objects tailored to their area. The app also allows users to save and favorite their searches for easy access and future reference.",
+      "description": "An interactive web application that lets users search locations and receive star charts, five-day weather forecasts, and visible celestial object information tailored to their area.",
       "tech": ["React", "Node.js", "Express", "MongoDB", "Netlify", "SCSS"],
       "image": "https://via.placeholder.com/500x300",
       "link": "https://spacex-plorer.netlify.app/",
@@ -22,33 +46,19 @@
         "frontend": "https://github.com/KerbalRejects/SpaceXplorer-frontend",
         "backend": "https://github.com/KerbalRejects/SpaceXplorer-Backend"
       },
-      "team": ["Ethan Luxton, ", "Michael Gazaway, ", "Manuch Sadri, ", "and Christopher Lopez"]
-    },
-    {
-      "id": 3,
-      "title": "Tarkine",
-      "description": "Tarkine is a vanilla HTML, CSS and Javascript web-based game, featuring a story-driven puzzle adventure where players navigate to safety after a plane crash. Players must locate items, solve puzzles, and make crucial choices to escape the forest. This was my first project in a team setting during my coding bootcamp.",
-      "tech": ["HTML", "CSS", "Javascript"],
-      "image": "https://via.placeholder.com/500x300",
-      "link": "https://tarkine.github.io/Main/index.html",
-      "github": {
-        "frontend": "https://github.com/Tarkine/Main"
-
-      },
-      "team": ["Ethan Luxton, ", "Camilla Rees, ", "and Michael Gazaway"]
+      "team": ["Ethan Luxton", "Michael Gazaway", "Manuch Sadri", "Christopher Lopez"]
     }
   ],
   "skills": {
-    "languages": ["JavaScript", "Python", "HTML", "CSS", "SQL"],
+    "languages": ["JavaScript", "TypeScript", "Python", "HTML", "CSS", "SQL"],
     "tools": [
-      "React.js", "Git", "GitHub", "VS Code", "Visual Studio", "Unity",
-      "WSL", "Linux Shell",
-      "Bootstrap", "Express.js", "Node.js", "MongoDB", "Auth0",
-      "PostgreSQL", "Socket.IO", "AWS", "NPM"
+      "React.js", "Vite", "Node.js", "Express.js", "Git", "GitHub", "VS Code",
+      "Linux Shell", "MongoDB", "PostgreSQL", "AWS", "Netlify", "NPM"
     ],
     "professional": [
-      "Salesforce", "Tamarac", "Wealthscape", "Schwab Advisor Center",
-      "Office 365 Suite","Adobe Suite", "Figma", "Prompt Engineering"
+      "Wealth Management", "RIA Operations", "Financial Planning Support", "Portfolio Operations",
+      "Salesforce", "Tamarac", "Wealthscape", "Schwab Advisor Center", "Office 365 Suite",
+      "AI Implementation", "Prompt Engineering", "Cybersecurity Awareness", "Process Automation"
     ]
   }
-} 
+}

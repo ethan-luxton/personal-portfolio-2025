@@ -1,8 +1,8 @@
 ---
 title: "Building Trust in Agentic AI: Autonomy Without Chaos"
 date: "2026-02-03"
-excerpt: ""
-tags: [Cybersecurity, AI, ]
+excerpt: "Agentic AI is moving from chat interfaces into real operational workflows. Useful autonomy depends on scoped permissions, observability, and control."
+tags: [Cybersecurity, AI, Automation]
 draft: false
 ---
 

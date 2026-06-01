@@ -10,7 +10,13 @@ function Portfolio() {
     <div className="w-full text-white/90">
       <div className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-4xl font-extrabold mb-4 text-center text-gradient">Featured <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Projects</span></h1>
-        <p className="text-white/70 text-center mb-12">A selection of my work and contributions</p>
+        <p className="text-white/70 text-center mb-8 max-w-3xl mx-auto">
+          A curated set of projects that connect finance, AI implementation, cybersecurity-aware systems, and practical software development.
+        </p>
+
+        <div className="glass-card p-6 mb-12 text-white/75 leading-relaxed">
+          <strong className="text-white">Project lens:</strong> I am most interested in tools that make real workflows clearer, safer, and easier to operate — especially where financial operations, automation, and secure system design overlap.
+        </div>
 
         <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
