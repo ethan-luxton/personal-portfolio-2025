@@ -16,16 +16,6 @@ const pillars = [
   },
 ]
 
-const interests = [
-  'Factor investing',
-  'Dividend growth',
-  'Personal fintech tools',
-  'Credit card points and travel optimization',
-  'Cooking',
-  'Thrift and resale hunting',
-  'Video games',
-  'AI agents and local automation',
-]
 
 function About() {
   return (
@@ -70,27 +60,14 @@ function About() {
           ))}
         </section>
 
-        <section className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] mt-8">
-          <article className="glass-card p-8">
-            <h2 className="text-2xl font-bold text-white mb-4">What I am building toward</h2>
-            <p className="text-white/75 leading-relaxed mb-4">
-              My long-term focus is on finance and technology roles where operational judgment matters: RIA operations, investment and trading workflows, fintech tooling, and AI systems that can be trusted in real business environments.
-            </p>
-            <p className="text-white/75 leading-relaxed">
-              I care about tools that are not just impressive demos, but controlled systems: scoped permissions, clear logs, human review at the right moments, and interfaces that make better decisions easier.
-            </p>
-          </article>
-
-          <aside className="glass-card p-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Interests</h2>
-            <div className="flex flex-wrap gap-2">
-              {interests.map((interest) => (
-                <span key={interest} className="px-3 py-1 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm">
-                  {interest}
-                </span>
-              ))}
-            </div>
-          </aside>
+        <section className="glass-card p-8 mt-8">
+          <h2 className="text-2xl font-bold text-white mb-4">What I am building toward</h2>
+          <p className="text-white/75 leading-relaxed mb-4">
+            My long-term focus is on finance and technology roles where operational judgment matters: RIA operations, investment and trading workflows, fintech tooling, and AI systems that can be trusted in real business environments.
+          </p>
+          <p className="text-white/75 leading-relaxed">
+            I care about tools that are not just impressive demos, but controlled systems: scoped permissions, clear logs, human review at the right moments, and interfaces that make better decisions easier.
+          </p>
         </section>
 
         <section className="glass-card p-6 mt-8 text-sm text-white/60 leading-relaxed">
